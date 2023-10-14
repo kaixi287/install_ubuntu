@@ -8,23 +8,22 @@
 
 ```bash
 sudo apt-get update
-sudo apt-get install cmake git zsh
+sudo apt-get install cmake git zsh curl
 chsh -s /bin/zsh
 ```
 
 2）安装ohmyzsh
 
 ```bash
-wget -p ~/ https://github.com/ohmyzsh/ohmyzsh/blob/master/tools/install.sh
-sudo chmod +x ~/install.sh
-sh ~/install.sh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
 3）安装插件
 
 ```bash
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+echo "source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" >> ~/.zshrc
 ```
 
 4）修改zshrc
